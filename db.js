@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect('mongodb+srv://' + process.env.DB_USER_PASS + '@cluster0.gr986.mongodb.net/taste-match', 
+mongoose.connect('mongodb+srv://' + process.env.DB_USER_PASS + '@newcluster.dpw3j.mongodb.net/taste-match', 
 {
     useNewUrlParser: true,  
     useUnifiedTopology: true,  
