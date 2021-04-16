@@ -29,7 +29,7 @@ app.get('*', checkUser);
 app.get('/jwtid', requireAuth, (req, res) => {
     res.status(200).send(res.locals.user._id)
 });
-app.get('/', (req, res) => { res.send('Hello from Express!');
+app.get('/', (req, res) => { res.send('Hello from Express!')});
 // routes
 app.use('/api/user', userRoutes);
 app.use('/api/review', reviewRoutes);
@@ -37,6 +37,6 @@ app.use('/api/review', reviewRoutes);
 
 
 // server 
-app.listen(process.env.PORT || 5000, () => {
+app.listen( (process.env.PORT || 5000), () => {
     console.log(`Listening on port ${process.env.PORT}`);
-})
+});
