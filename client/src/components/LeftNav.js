@@ -107,7 +107,7 @@ const LeftNav = () => {
                             <Grid container xs={12} alignItems="center" justify="center" style={{ color: "black" }}>
 
                                 <PeopleOutlineIcon fontSize="large" />
-                                <p style={{ fontSize: "1rem", marginLeft: ".3rem"}}>{ userData.followers ? userData.following.length : 0}</p>
+                                <p style={{ fontSize: "1rem", marginLeft: ".3rem"}}>{ userData.followers ? userData.followers.length : 0}</p>
 
                             </Grid>
 
