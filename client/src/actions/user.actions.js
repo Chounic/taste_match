@@ -37,7 +37,7 @@ export const uploadPicture = (data, uid) => {
 
 
     return (dispatch) => {
-        return axios.post(`${process.env.REACT_APP_API_URL}/api/user/upload`, data)
+        return axios.post(/*`${process.env.REACT_APP_API_URL}/api/user/upload`*/`/api/user/upload`, data)
         .then( res => { 
             if (res.data.errors) {
 
@@ -58,7 +58,7 @@ export const uploadPicture = (data, uid) => {
 export const updateProfil = (data, uid) => {
 
     return (dispatch) => {
-        return axios.put(`${process.env.REACT_APP_API_URL}/api/user/${uid}`, data)
+        return axios.put(/*`${process.env.REACT_APP_API_URL}/api/user/${uid}`*/`/api/user/${uid}`, data)
         .then( res => {
 
             if (res.data.errors) {
@@ -83,7 +83,7 @@ export const updateProfil = (data, uid) => {
 
 export const followUser = (idToFollow, uid) => {
     return (dispatch) => {
-        return axios.patch(`${process.env.REACT_APP_API_URL}/api/user/followUser/${uid}`, {idToFollow})
+        return axios.patch(/*`${process.env.REACT_APP_API_URL}/api/user/followUser/${uid}`*/`/api/user/followUser/${uid}`, {idToFollow})
         .then( res => {
                 dispatch({ type: FOLLOW_USER, payload: idToFollow })
             })
@@ -94,7 +94,7 @@ export const followUser = (idToFollow, uid) => {
 
 export const unfollowUser = (idToUnfollow, uid) => {
     return (dispatch) => {
-        return axios.patch(`${process.env.REACT_APP_API_URL}/api/user/unfollowUser/${uid}`, {idToUnfollow})
+        return axios.patch(/*`${process.env.REACT_APP_API_URL}/api/user/unfollowUser/${uid}`*/`/api/user/unfollowUser/${uid}`, {idToUnfollow})
         .then( res => {
                 dispatch({ type: UNFOLLOW_USER, payload: idToUnfollow })
             })
