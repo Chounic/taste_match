@@ -9,6 +9,7 @@ const reviewRoutes = require('./routes/review.routes');
 const {checkUser, requireAuth} = require('./middleware/auth.middleware');
 const cors = require('cors');
 const path = require("path");
+const PORT = process.env.PORT ;
 
 
 
@@ -46,6 +47,6 @@ app.get("*", (req, res) => {
 });
 
 // server 
-app.listen( (process.env.PORT || 5000), () => {
-    console.log(`Listening on port ${process.env.PORT}`);
+app.listen( PORT, () => {
+    console.log(`Listening on port ${PORT}`);
 });
