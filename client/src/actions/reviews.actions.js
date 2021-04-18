@@ -17,7 +17,7 @@ export const DELETE_REVIEW = "DELETE_REVIEW";
 
 export const getReviews = () => {
     return (dispatch) => {
-        return axios.get(`${process.env.REACT_APP_API_URL}api/review`)
+        return axios.get(`/api/review`)
         .then( (res) => {
             dispatch({ type: GET_REVIEWS, payload: res.data});
             dispatch({ type: GET_UPDATE_ERROR, payload: ''});
@@ -29,7 +29,7 @@ export const getReviews = () => {
 
 export const likeReview = (reviewId, likerId) => {
     return (dispatch) => {
-        return axios.patch(`${process.env.REACT_APP_API_URL}api/review/like-review/${reviewId}`, {id: likerId})
+        return axios.patch(`/api/review/like-review/${reviewId}`, {id: likerId})
         .then( res => {
             
             dispatch({ type: LIKE_REVIEW, payload: {reviewId, likerId} })
@@ -40,7 +40,7 @@ export const likeReview = (reviewId, likerId) => {
 
 export const unlikeReview = (reviewId, likerId) => {
     return (dispatch) => {
-        return axios.patch(`${process.env.REACT_APP_API_URL}api/review/unlike-review/${reviewId}`, {id: likerId})
+        return axios.patch(`/api/review/unlike-review/${reviewId}`, {id: likerId})
         .then( res => {
             
             dispatch({ type: UNLIKE_REVIEW, payload: {reviewId, likerId} })
@@ -51,7 +51,7 @@ export const unlikeReview = (reviewId, likerId) => {
 
 export const dislikeReview = (reviewId, dislikerId) => {
     return (dispatch) => {
-        return axios.patch(`${process.env.REACT_APP_API_URL}api/review/dislike-review/${reviewId}`, {id: dislikerId})
+        return axios.patch(`/api/review/dislike-review/${reviewId}`, {id: dislikerId})
         .then( res => {
             
             dispatch({ type: DISLIKE_REVIEW, payload: {reviewId, dislikerId} })
@@ -62,7 +62,7 @@ export const dislikeReview = (reviewId, dislikerId) => {
 
 export const undoDislikeReview = (reviewId, dislikerId) => {
     return (dispatch) => {
-        return axios.patch(`${process.env.REACT_APP_API_URL}api/review/undoDislike-review/${reviewId}`, {id: dislikerId})
+        return axios.patch(`$/api/review/undoDislike-review/${reviewId}`, {id: dislikerId})
         .then( res => {
             
             dispatch({ type: UNDODISLIKE_REVIEW, payload: {reviewId, dislikerId} })
@@ -77,7 +77,7 @@ export const createReview = (reviewerId, data) => {
     const params = Object.assign(data, {reviewerId});
     console.log(params);
     return (dispatch) => {
-        return axios.post(`${process.env.REACT_APP_API_URL}api/review/`, params)
+        return axios.post(`/api/review/`, params)
         .then( res => {
 
             console.log(res);
@@ -90,7 +90,7 @@ export const createReview = (reviewerId, data) => {
 export const updateReview = (review) => {
 
     return (dispatch) => {
-        return axios.put(`${process.env.REACT_APP_API_URL}api/review/${review._id}`, review)
+        return axios.put(`/api/review/${review._id}`, review)
         .then( res => {
 
             //console.log(review);
@@ -104,7 +104,7 @@ export const updateReview = (review) => {
 export const deleteReview = (reviewId) => {
 
     return (dispatch) => {
-        return axios.delete(`${process.env.REACT_APP_API_URL}api/review/${reviewId}`)
+        return axios.delete(`/api/review/${reviewId}`)
         .then( res => {
 
             dispatch({ type: DELETE_REVIEW, payload: reviewId })
