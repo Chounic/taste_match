@@ -15,7 +15,7 @@ const LogOut = () => {
             
             await axios({ 
                 method: "get", 
-                url: /*`${process.env.REACT_APP_API_URL}/api/user/logout`*/`/api/user/logout`, 
+                url: `/api/user/logout`, 
                 withCredentials: true, 
                 
             })

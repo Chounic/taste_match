@@ -72,7 +72,7 @@ export default function SignUp() {
 
     axios({ 
       method: "post", 
-      url: /*`${process.env.REACT_APP_API_URL}/api/user/register`*/`/api/user/register`, 
+      url: `/api/user/register`, 
       withCredentials: true, 
       data: {
         pseudo, 

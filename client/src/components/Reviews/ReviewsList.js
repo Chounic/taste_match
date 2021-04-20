@@ -78,7 +78,7 @@ const ReviewsList = () => {
             !isEmpty(reviewsData) && reviewsData.map( review => {
 
                 return (
-                <Paper key={review._id} style={{ margin: '1rem', backgroundColor: "rgb(0 0 0 / 4%)" }}>
+                <Paper key={review._id} style={{ margin: '1.5rem', backgroundColor: "rgb(0 0 0 / 4%)" }}>
                   <Grid container >
                     <Grid item xs={2} >
                       { !isEmpty(usersData) && usersData.filter( user => user._id === review.reviewerId).map(user => {
@@ -87,7 +87,7 @@ const ReviewsList = () => {
 
                         <Grid container key={user._id} justify="center" alignContent="center" >
 
-                          <img src={user.picture} alt="reviewerPic"  style={{ width: '4rem', marginTop: "6rem"}}/>
+                          <img src={user.picture} alt="reviewerPic"  style={{ width: '4rem', marginTop: "6rem", marginLeft: "1rem"}}/>
                   
                             
                             <p>{user.pseudo}</p>
@@ -107,7 +107,7 @@ const ReviewsList = () => {
                             </Grid>
 
                             <Grid container alignContent="center" alignItems="center" direction="column">
-                              <Typography>Follow?</Typography>
+
                               <FollowUnfollow idToSet={user._id} type="review"/>
                               
                             </Grid>

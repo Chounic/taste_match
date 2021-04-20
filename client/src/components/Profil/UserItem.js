@@ -79,7 +79,7 @@ const UserItem = ({data}) => {
                             </Grid>
                         </Grid>
                     </Grid>
-                    <Grid  container xs={3} justify="space-between">
+                    <Grid  item xs={3} >
                         <Grid>
 
                         <FollowUnfollow idToSet={data._id} />

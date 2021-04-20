@@ -22,12 +22,14 @@ const useStyles = makeStyles((theme) => ({
   root: {
     //flexGrow: 1, 
     backgroundColor: "#63879e", 
+    border: "red solid", 
+    width: "100%"
   },
   colorDefault: {
     backgroundColor: "#63879e",
   }, 
   title: {
-    flexGrow: 1, 
+    //flexGrow: 1, 
     marginRight: "1rem"
   },
 }));

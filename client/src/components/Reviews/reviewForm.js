@@ -156,7 +156,7 @@ fullScreen
 
         <Paper elevation={3} >
 
-<Typography variant='h4' paragraph>
+<Typography variant='h4' component="div" paragraph>
 
         <DialogTitle id="customized-dialog-title" disableTypography={true}>
           Write a review

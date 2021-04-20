@@ -74,7 +74,7 @@ const LeftNav = () => {
                     <Grid className={classes.item}>
                         
                         <NavLink to='/' exact activeClassName={classes.button} style={{ textDecoration: 'none' }}> 
-                            <Grid container xs={12} alignItems="center" justify="center" alignContent="center" style={{ color: "black" }}>
+                            <Grid container alignItems="center" justify="center" alignContent="center" style={{ color: "black" }}>
 
                                 <HomeIcon fontSize="large" />
                                 <p style={{ fontSize: "1rem", marginLeft: ".3rem"}}>Home</p>
@@ -89,7 +89,7 @@ const LeftNav = () => {
 
                         <NavLink to='/Following' exact activeClassName={classes.button} style={{ textDecoration: 'none' }} >   
 
-                        <Grid container xs={12} alignItems="center" justify="center" alignContent="center" style={{ color: "black" }}>
+                        <Grid container alignItems="center" justify="center" alignContent="center" style={{ color: "black" }}>
 
                             <GroupIcon fontSize="large" />
                             <p style={{ fontSize: "1rem", marginLeft: ".3rem"}}>{ userData.following ? userData.following.length : 0}</p>
@@ -104,7 +104,7 @@ const LeftNav = () => {
 
                         <NavLink to='/Followers' exact activeClassName={classes.button} style={{ textDecoration: 'none' }} >
 
-                            <Grid container xs={12} alignItems="center" justify="center" style={{ color: "black" }}>
+                            <Grid container alignItems="center" justify="center" style={{ color: "black" }}>
 
                                 <PeopleOutlineIcon fontSize="large" />
                                 <p style={{ fontSize: "1rem", marginLeft: ".3rem"}}>{ userData.followers ? userData.followers.length : 0}</p>
@@ -118,7 +118,7 @@ const LeftNav = () => {
 
                         <NavLink to='/Reviews' exact activeClassName={classes.button} style={{ textDecoration: 'none' }} >  
 
-                            <Grid container xs={12} alignItems="center" justify="center" style={{ color: "black" }}>
+                            <Grid container alignItems="center" justify="center" style={{ color: "black" }}>
 
                             <GroupAddIcon fontSize="large" />
                             <p style={{ fontSize: "1rem", marginLeft: ".3rem"}}>Add</p>

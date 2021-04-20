@@ -28,7 +28,7 @@ function App() {
     const fetchToken = async () => {
       await axios({
         method: "get", 
-        url: /*`${process.env.REACT_APP_API_URL}/api/jwtid`*/`/api/jwtid`, 
+        url: `/api/jwtid`, 
         withCredentials: true
       })
       .then( res => {
@@ -50,16 +50,16 @@ function App() {
     <Router>
       <Navbar />
 
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/login" exact component={Login} />
-            <Route path="/register" exact component={Register} />
-            <Route path="/profil" exact component={Profil} />
-            <Route path="/Following" exact component={Following} />
-            <Route path="/Followers" exact component={Followers} />
-            <Route path="/Reviews" exact component={Reviews} />
-            <Redirect to="/" />  
-          </Switch>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/login" exact component={Login} />
+        <Route path="/register" exact component={Register} />
+        <Route path="/profil" exact component={Profil} />
+        <Route path="/Following" exact component={Following} />
+        <Route path="/Followers" exact component={Followers} />
+        <Route path="/Reviews" exact component={Reviews} />
+        <Redirect to="/" />  
+      </Switch>
     </Router>
   </UidContext.Provider>
   );
