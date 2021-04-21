@@ -21,7 +21,7 @@ const Home = () => {
             { uid && <LeftNav /> }
             
                     <ReviewForm />
-                    <h1>Reviews</h1>  
+                    
                     <ReviewsList />
                     <div style={{height: "5rem"}}></div>
         </div>

@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 import { Grid, Typography } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 import { dislikeReview, likeReview, undoDislikeReview, unlikeReview } from '../../actions/reviews.actions';
+import { UidContext } from '../AppContext';
 
 
 const LikeDislike = ({review}) => {
 
 
+    const uid = useContext(UidContext);
     const userData = useSelector( state => state.userReducer);
     const dispatch = useDispatch();
 
@@ -39,7 +41,7 @@ const LikeDislike = ({review}) => {
         <>
         <Grid item>
 
-            <ThumbUpIcon fontSize="large" onClick={like} />
+            <ThumbUpIcon fontSize="large" onClick={uid ? like : null} />
             <Typography>
             <span>{review.likers.length}</span>
             </Typography>
@@ -48,7 +50,7 @@ const LikeDislike = ({review}) => {
         <Grid item>
 
 
-            <ThumbDownIcon  fontSize="large" onClick={dislike} />
+            <ThumbDownIcon  fontSize="large" onClick={uid ? dislike : null} />
             <Typography paragraph>
             <span>{review.dislikers.length}</span>
             </Typography>

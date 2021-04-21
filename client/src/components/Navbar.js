@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     //flexGrow: 1, 
     backgroundColor: "#63879e", 
     border: "red solid", 
-    width: "100%"
+    height: "8rem"
   },
   colorDefault: {
     backgroundColor: "#63879e",

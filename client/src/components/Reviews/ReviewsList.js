@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getReviews } from '../../actions/reviews.actions';
 import { isEmpty } from '../../utils/utils';
@@ -19,13 +19,14 @@ import GroupIcon from '@material-ui/icons/Group';
 import FollowUnfollow from '../Profil/FollowUnfollow'; 
 import LikeDislike from './LikeDislike';
 import { dateParser } from '../../utils/utils';
+import { UidContext } from '../AppContext';
 
 
 
 const ReviewsList = () => {
 
 
-
+    const uid = useContext(UidContext);
     const reviewsData = useSelector( state => state.reviewsReducer );
     const usersData = useSelector( (state) => state.usersReducer);
     const dispatch = useDispatch();
@@ -74,10 +75,12 @@ const ReviewsList = () => {
 
     return (
         <div>
+          <h1 style={{ marginLeft: ".5rem"}}>Reviews</h1>  
             { 
             !isEmpty(reviewsData) && reviewsData.map( review => {
 
                 return (
+                  
                 <Paper key={review._id} style={{ margin: '1.5rem', backgroundColor: "rgb(0 0 0 / 4%)" }}>
                   <Grid container >
                     <Grid item xs={2} >
@@ -105,6 +108,7 @@ const ReviewsList = () => {
                               <Typography paragraph>{user.followers.length }</Typography>
                               
                             </Grid>
+                          { uid && 
 
                             <Grid container alignContent="center" alignItems="center" direction="column">
 
@@ -112,6 +116,7 @@ const ReviewsList = () => {
                               
                             </Grid>
 
+                          }
 
 
                           
@@ -125,7 +130,7 @@ const ReviewsList = () => {
                       
                       }
                     </Grid>
-                    <Grid item xs={9} style={{ padding: '1rem'}}>
+                    <Grid item xs={9} style={{ padding: '1rem', marginLeft: '.2rem'}}>
  
                         <Grid style={{ paddingLeft: ".5rem", borderBottom: "#d8d7d7 solid 1px"}} container justify="space-between" alignItems="center">
                             <Grid >
