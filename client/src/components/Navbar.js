@@ -87,7 +87,7 @@ export default function ButtonAppBar() {
           <NavLink exact to="/Profil" style={{
     color: "white", textDecoration: 'none'
             }}>   
-          <Button color="inherit" >Login</Button>
+          <Button color="inherit" ><Typography>Login</Typography></Button>
           </NavLink>}
         </Toolbar>
       </AppBar>

@@ -75,7 +75,7 @@ const ReviewsList = () => {
 
     return (
         <div>
-          <h1 style={{ marginLeft: ".5rem"}}>Reviews</h1>  
+          <h1 style={{ marginLeft: ".5rem"}}>Critiques d'albums</h1>  
             { 
             !isEmpty(reviewsData) && reviewsData.map( review => {
 

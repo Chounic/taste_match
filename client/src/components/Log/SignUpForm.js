@@ -116,7 +116,7 @@ if (registration) {
         <Avatar className={classes.avatar}>
         <LockOutlinedIcon />
         </Avatar>
-        <Typography component="h1" variant="h5">
+        <Typography component="h1" variant="h4">
         Sign up
         </Typography>
         <form onSubmit={handleSubmit} className={classes.form} noValidate>
@@ -168,6 +168,7 @@ if (registration) {
                 type="submit"
                 fullWidth
                 variant="contained" 
+                size="large" 
                 color="primary"
                 className={classes.submit} 
                 >

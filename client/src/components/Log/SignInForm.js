@@ -85,7 +85,7 @@ export default function SignIn() {
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
-        <Typography component="h1" variant="h5">
+        <Typography component="h1" variant="h4">
           Sign in
         </Typography>
         <form onSubmit={handleSubmit} className={classes.form} noValidate>
@@ -122,7 +122,8 @@ export default function SignIn() {
             type="submit"
             fullWidth
             variant="contained"
-            color="primary"
+            color="primary" 
+            size="large" 
             className={classes.submit}
             >
             Sign In

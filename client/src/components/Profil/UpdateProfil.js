@@ -158,17 +158,17 @@ const UpdateProfil = () => {
                             <Grid style={{ marginBottom: "4rem", marginTop: "3rem"}}>
                             
                                 <FormControl component="fieldset">
-                                <FormLabel component="legend"><Typography variant="h4" paragraph>Gender</Typography></FormLabel>
+                                <FormLabel component="legend"><Typography variant="h4" paragraph>Genre</Typography></FormLabel>
                                 <RadioGroup aria-label="gender" name="gender" defaultValue={userData.gender ? userData.gender : ''} onChange={handleChange}>
-                                <FormControlLabel value="female" control={<Radio />} label={<Typography variant="h5">Female</Typography>} />
-                                <FormControlLabel value="male" control={<Radio />} label={<Typography variant="h5">Male</Typography>} />
-                                <FormControlLabel value="other" control={<Radio />} label={<Typography variant="h5">Other</Typography>} />
+                                <FormControlLabel value="female" control={<Radio />} label={<Typography variant="h5">Femme</Typography>} />
+                                <FormControlLabel value="male" control={<Radio />} label={<Typography variant="h5">Homme</Typography>} />
+                                <FormControlLabel value="other" control={<Radio />} label={<Typography variant="h5">Autre</Typography>} />
                                 </RadioGroup>
                                 </FormControl>
                                 
                             </Grid>
     
-                            <InputLabel><Typography variant="h4" paragraph>Favorite artists</Typography></InputLabel>
+                            <InputLabel><Typography variant="h4" paragraph>Artistes favoris</Typography></InputLabel>
                             <TextField 
                             
                             id="outlined-required" 
@@ -229,7 +229,7 @@ const UpdateProfil = () => {
                     
                     </ Paper>
 
-                    <h1>My reviews</h1>
+                    <h1>Mes critiques</h1>
                     <MyReviews />
                 </div>
 

@@ -140,7 +140,7 @@ const ReviewForm = () => {
 <>
 { uid &&  
     <Button variant="outlined" color="inherit" size="large" style={{margin: "2rem", width: "40%"}} onClick={handleClickOpen}>
-    Write a review  
+    Ecrire une critique d'album  
     </Button>
 }
 
