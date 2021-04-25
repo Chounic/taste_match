@@ -63,9 +63,9 @@ export default function ButtonAppBar() {
   const userdata = useSelector( state => state.userReducer);
 
   return (
-    <div className={classes.root}>
+    <div >
       <ThemeProvider theme={theme}>
-      <AppBar position="static" >
+      <AppBar position="static" className={classes.root}>
         <Toolbar>
 
             <div>
