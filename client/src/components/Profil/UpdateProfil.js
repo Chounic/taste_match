@@ -32,12 +32,12 @@ const useStyles = makeStyles((theme) => ({
     form: {
         '& .MuiTextField-root': {
           margin: theme.spacing(1),
-          width: '90%',
+          width: '100%',
         }, 
         margin: '3rem'
     }, 
     input: {
-        fontSize: 13
+        fontSize: 15
       }
   }));
 
@@ -123,7 +123,7 @@ const UpdateProfil = () => {
                             id="outlined-multiline-static"
                             label={<Typography variant="h4">Description</Typography>} 
                             multiline
-                            rows={6} 
+                            rows={10} 
                             defaultValue={userData.description} 
                             placeholder="Ecrire une description" 
                             variant="outlined" 
@@ -218,7 +218,7 @@ const UpdateProfil = () => {
                             type="submit"
                             variant="contained"
                             color="secondary"
-                            size="medium"
+                            size="large"
                             className={classes.form}
                             startIcon={<SaveIcon />} 
                             >

@@ -12,6 +12,8 @@ const FollowingList = () => {
 
     return (
         <Grid container justify="center">
+
+            <h1>Following</h1>
             {
                 !isEmpty(usersData) && usersData.map( user => {
                     if (!isEmpty(userData) && userData.following.includes(user._id)) {

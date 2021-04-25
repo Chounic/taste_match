@@ -13,6 +13,7 @@ const Following = () => {
         <div>
             
             { uid && <LeftNav /> }
+            
             <FollowingList />
                 
         </div>

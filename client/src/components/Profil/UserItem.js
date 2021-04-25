@@ -86,11 +86,11 @@ const UserItem = ({data}) => {
                         </Grid>
                         <Grid container justify="space-around" style={{ marginTop: "1rem"}}>
 
-                        <GroupIcon/>
-                        <ThemeProvider theme={favFont}>
-                              <Typography variant="h5"  color="secondary">{data.following.length }</Typography>
-                              <PeopleOutlineIcon style={{ marginBottom: "1rem"}}/>
-                              <Typography  variant="h5" color="secondary">{data.followers.length }</Typography>
+                              <ThemeProvider theme={favFont}>
+                                <GroupIcon fontSize="large" />
+                                <Typography variant="h5"  color="secondary">{data.following.length }</Typography>
+                                <PeopleOutlineIcon  fontSize="large" style={{ marginBottom: "1rem"}}/>
+                                <Typography  variant="h5" color="secondary">{data.followers.length }</Typography>
                               </ThemeProvider>
                         </Grid>
                     </Grid>

@@ -4,7 +4,7 @@ import { followUser, unfollowUser } from '../../actions/user.actions';
 import { isEmpty } from '../../utils/utils';
 import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
 import CheckBoxIcon from '@material-ui/icons/CheckBox';
-import { Typography } from '@material-ui/core';
+import { Button, Typography } from '@material-ui/core';
 
 
 const FollowUnfollow = ({idToSet, type}) => {
@@ -59,10 +59,16 @@ const FollowUnfollow = ({idToSet, type}) => {
         
         return (
             <div>
-                <button 
+                {/*<button 
                 onClick={handleFollow}
                 >{ !isEmpty(userData) && userData.following.includes(idToSet) ? 'UNFOLLOW' : 'FOLLOW' }
-                </button>
+                </button>*/}
+                <Button
+                variant="contained" 
+                onClick={handleFollow}
+                >
+                <Typography variant="h6" >{ !isEmpty(userData) && userData.following.includes(idToSet) ? 'UNFOLLOW' : 'FOLLOW' }</Typography>
+                </Button>
             </div>
         );
         

@@ -1,3 +1,4 @@
+import { Grid } from '@material-ui/core';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { isEmpty } from '../../utils/utils';
@@ -11,9 +12,9 @@ const FollowersList = () => {
 
         
         return (
+            <Grid container justify="center">
             
-            
-            <div style={{ width: '15rem' }}>
+            <h1>Followers</h1>
             {
                 !isEmpty(usersData) && usersData.map( user => {
                     if (!isEmpty(userData) && userData.followers.includes(user._id)) {
@@ -25,7 +26,7 @@ const FollowersList = () => {
                         }
                     })
             }
-            </div>
+            </Grid>
 
 )
 
