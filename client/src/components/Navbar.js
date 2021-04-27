@@ -23,7 +23,9 @@ const useStyles = makeStyles((theme) => ({
     //flexGrow: 1, 
     backgroundColor: "#63879e", 
     border: "red solid", 
-    height: "8rem"
+    height: "10rem", 
+    display: "flex", 
+    justifyContent: "center"
   },
   colorDefault: {
     backgroundColor: "#63879e",
@@ -78,8 +80,8 @@ export default function ButtonAppBar() {
             </ThemeProvider>
 
           { uid ? <>
-            <NavLink exact to="/Profil" style={{ color: "white", marginLeft: "2rem" }}>
-            <h3 >Bienvenue {userdata.pseudo}</h3>
+            <NavLink exact to="/Profil" style={{ color: "white", marginLeft: "2rem", textDecoration: 'none' }}>
+            <h3 >Hello {userdata.pseudo}</h3>
             </NavLink>
             <LogOut />
           </>

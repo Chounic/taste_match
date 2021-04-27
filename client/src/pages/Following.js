@@ -15,7 +15,7 @@ const Following = () => {
             { uid && <LeftNav /> }
             
             <FollowingList />
-                
+            <div style={{height: "5rem"}}></div>
         </div>
     );
 

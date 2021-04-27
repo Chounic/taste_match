@@ -44,7 +44,7 @@ const Log = () => {
             <div> 
                 <SignInForm /> 
                 <br></br>
-                <div onClick={handleModals} id="signUp" className={classes.paper} >Don't have an account? Sign Up</div> 
+                <div onClick={handleModals} id="signUp" className={classes.paper} >Pas encore inscrit(e)? Cliquez ici</div> 
             </div> 
             }
 
@@ -52,7 +52,7 @@ const Log = () => {
             <div> 
                 <SignUpForm /> 
                 <br></br> 
-                <div onClick={handleModals} id="signIn" className={classes.paper} >Already have an account? Sign in</div> 
+                <div onClick={handleModals} id="signIn" className={classes.paper} >Déjà inscrit(e)? Cliquez ici</div> 
             </div>
             }
 

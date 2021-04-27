@@ -12,7 +12,7 @@ const Followers = () => {
         <div>
             { uid && <LeftNav /> }
             <FollowersList />
-                
+            <div style={{height: "5rem"}}></div>
         </div>
     );
 

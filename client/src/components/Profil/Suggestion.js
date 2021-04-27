@@ -6,6 +6,7 @@ import { isEmpty } from '../../utils/utils';
 import { getUsers } from '../../actions/users.actions';
 import { UidContext } from '../AppContext';
 import { getUser } from '../../actions/user.actions';
+import { Grid } from '@material-ui/core';
 
 const Suggestion = () => {
 
@@ -20,7 +21,7 @@ const Suggestion = () => {
         
 
         console.log('suggestions');
-        if (userData.following) {
+        if (!isEmpty(userData.following)) {
 
             const favArtistsArray = Object.values(userData.favArtists);
             const notFollowed = usersData.filter( user => user._id !== userData._id && !userData.following.includes(user._id));
@@ -48,7 +49,7 @@ const Suggestion = () => {
 
 
     return (
-        <div>
+        <Grid container justify="center">
             
             <h1>Friends suggestions</h1>
 
@@ -73,7 +74,7 @@ const Suggestion = () => {
                 })
             }
 
-        </div>
+        </Grid>
     );
 };
 

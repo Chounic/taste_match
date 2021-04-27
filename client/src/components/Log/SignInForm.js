@@ -34,10 +34,10 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1.5rem", 
   },
   submit: {
-    marginTop: theme.spacing(8), 
-    marginBottom: theme.spacing(8), 
+    marginTop: theme.spacing(6), 
+
     margin: 'auto', 
-    width: "8rem"
+    width: "12rem"
   },
 }));
 
@@ -86,7 +86,7 @@ export default function SignIn() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h4">
-          Sign in
+          Se connecter
         </Typography>
         <form onSubmit={handleSubmit} className={classes.form} noValidate>
           <Grid container>
@@ -97,7 +97,7 @@ export default function SignIn() {
             required
             fullWidth
             id="email"
-            label="Email Address"
+            label="E-mail"
             name="email" 
             onChange={ (e) => setEmail(e.target.value)} 
             autoComplete="email"
@@ -110,7 +110,7 @@ export default function SignIn() {
             required
             fullWidth
             name="password"
-            label="Password"
+            label="Mot De Passe"
             type="password"
             id="password" 
             onChange={ (e) => setPassword(e.target.value)} 
@@ -126,7 +126,7 @@ export default function SignIn() {
             size="large" 
             className={classes.submit}
             >
-            Sign In
+            Se connecter
           </Button>
 
           </Grid>

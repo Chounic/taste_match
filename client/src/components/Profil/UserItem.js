@@ -55,7 +55,7 @@ const UserItem = ({data}) => {
 
 
     return (
-        <Paper key={data._id} style={{ margin: '1rem', width: '30rem' }}>
+        <Paper key={data._id} style={{ margin: '1rem', width: '30rem', height: '15rem' }}>
             <Grid container justify="center">
 
                 <Grid container direction='row' alignItems='center' justify='space-evenly'>

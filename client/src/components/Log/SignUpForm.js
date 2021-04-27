@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(3),
   },
   submit: {
-    marginTop: theme.spacing(8), 
+    marginTop: theme.spacing(6), 
     margin: 'auto', 
     width: "8rem"
   },
@@ -54,8 +54,6 @@ const useStyles = makeStyles((theme) => ({
 export default function SignUp() {
   const classes = useStyles();
 
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
   const [pseudo, setPseudo] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -117,7 +115,7 @@ if (registration) {
         <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h4">
-        Sign up
+        S'inscrire
         </Typography>
         <form onSubmit={handleSubmit} className={classes.form} noValidate>
         <Grid container spacing={2}>
@@ -140,7 +138,7 @@ if (registration) {
                   required
                   fullWidth
                   id="email"
-                  label="Email Address"
+                  label="E-mail"
                   name="email" 
                   onChange={ (e) => setEmail(e.target.value) }
                   autoComplete="email"
@@ -153,7 +151,7 @@ if (registration) {
                     required
                     fullWidth
                     name="password"
-                    label="Password"
+                    label="Mot De Passe"
                     type="password"
                     id="password" 
                     onChange={ (e) => setPassword(e.target.value) }
@@ -172,7 +170,7 @@ if (registration) {
                 color="primary"
                 className={classes.submit} 
                 >
-                  Sign Up
+                  S'inscrire
                 </Button>
 
           </Grid>
