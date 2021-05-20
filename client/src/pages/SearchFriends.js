@@ -5,7 +5,7 @@ import Suggestion from '../components/Profil/Suggestion';
 
 
 
-const Review = () => {
+const SearchFriends = () => {
 
 
     const uid = useContext(UidContext);
@@ -21,4 +21,4 @@ const Review = () => {
     );
 };
 
-export default Review;
+export default SearchFriends;

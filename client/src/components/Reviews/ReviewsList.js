@@ -74,13 +74,17 @@ const ReviewsList = () => {
 
 
     return (
-        <div>
-          <h1 style={{ marginLeft: ".5rem"}}>Critiques d'albums</h1>  
+        <div /*style={{ backgroundColor: "red" }} */>
+
+          <h1 style={{ marginLeft: ".5rem"}}>Critiques d'albums</h1>
+
+          <Grid container >
             { 
             !isEmpty(reviewsData) && reviewsData.map( review => {
 
                 return (
-                  
+                
+                <Grid item xs={12} lg={8}>
                 <Paper key={review._id} style={{ margin: '1.5rem', backgroundColor: "rgb(0 0 0 / 4%)" }}>
                   <Grid container >
                     <Grid item xs={2} >
@@ -181,9 +185,12 @@ const ReviewsList = () => {
 
                   </Grid>
                 </Paper>
+                </Grid>
                 )
             })
             }
+
+          </Grid>
         </div>
     );
 };

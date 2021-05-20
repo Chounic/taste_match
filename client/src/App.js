@@ -8,14 +8,14 @@ import Register from './pages/Register';
 import Profil from './pages/Profil';
 import Following from './pages/Following';
 import Followers from './pages/Followers';
-import Reviews from './pages/Reviews';
+import SearchFriends from './pages/SearchFriends';
 import axios from 'axios';
 import Navbar from './components/Navbar';
 import LeftNav from './components/LeftNav';
 import Container from '@material-ui/core/Container';
 import { useDispatch } from 'react-redux';
 import { getUser } from './actions/user.actions';
-import "./App.css";
+
 
 
 function App() {
@@ -49,7 +49,7 @@ function App() {
   <UidContext.Provider value={uid}>
     <Router>
       <Navbar />
-
+      <Container maxWidth="lg" disableGutters>
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/login" exact component={Login} />
@@ -57,9 +57,10 @@ function App() {
         <Route path="/profil" exact component={Profil} />
         <Route path="/Following" exact component={Following} />
         <Route path="/Followers" exact component={Followers} />
-        <Route path="/Reviews" exact component={Reviews} />
+        <Route path="/SearchFriends" exact component={SearchFriends} />
         <Redirect to="/" />  
       </Switch>
+      </Container>
     </Router>
   </UidContext.Provider>
   );

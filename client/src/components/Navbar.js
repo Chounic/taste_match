@@ -14,6 +14,8 @@ import logoTaste1 from '../images/logoTaste1.png';
 import { green } from '@material-ui/core/colors';
 import "@fontsource/courgette";
 import "@fontsource/luckiest-guy";
+import { Container, Grid } from '@material-ui/core';
+
 
 
 
@@ -23,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     //flexGrow: 1, 
     backgroundColor: "#63879e", 
     border: "red solid", 
-    height: "10rem", 
+    height: "15rem", 
     display: "flex", 
     justifyContent: "center"
   },
@@ -66,34 +68,55 @@ export default function ButtonAppBar() {
 
   return (
     <div >
+      
       <ThemeProvider theme={theme}>
       <AppBar position="static" className={classes.root}>
+      <Container  maxWidth="xl" disableGutters>
         <Toolbar>
+          <Grid container spacing={3} justify="space-between">
+            <Grid item xs={12} sm={6} md={8} lg={9}>
+            
+                  <NavLink exact to="/"><img src={logoTaste1} style={{ width: "4rem", marginRight: "1rem"}} alt="logo"/></NavLink>
+              
+               
+                  <ThemeProvider theme={titleFont}>
+                  <NavLink exact to="/" style={{ textDecoration: 'none' }}><Typography className={classes.title} variant="h4" component="span" noWrap color="primary" paragraph >
+                    Taste Match
+                  </Typography></NavLink>
+                  </ThemeProvider>
+                
+            </Grid>
 
-            <div>
-            <NavLink exact to="/"><img src={logoTaste1} style={{ width: "4rem", marginRight: "2rem"}} alt="logo"/>          </NavLink>
-            </div>
-            <ThemeProvider theme={titleFont}>
-            <NavLink exact to="/" style={{ textDecoration: 'none' }}><Typography className={classes.title} variant="h4" color="primary">
-              Taste Match
-            </Typography></NavLink>
-            </ThemeProvider>
-
-          { uid ? <>
-            <NavLink exact to="/Profil" style={{ color: "white", marginLeft: "2rem", textDecoration: 'none' }}>
-            <h3 >Hello {userdata.pseudo}</h3>
-            </NavLink>
-            <LogOut />
-          </>
-          : 
-          <NavLink exact to="/Profil" style={{
-    color: "white", textDecoration: 'none'
-            }}>   
-          <Button color="inherit" ><Typography>Login</Typography></Button>
-          </NavLink>}
+            <Grid item xs={12} sm={6} md={4} lg={3}>
+              <Grid container alignItems="flex-end" spacing={3}>
+                
+                { uid ? <>
+                  <Grid item>
+                  <ThemeProvider theme={theme}>
+                  <Typography component="span" display="block" variant="h6" color="textPrimary" >Hello {userdata.pseudo}</Typography></ThemeProvider>
+                  <NavLink exact to="/Profil" style={{  marginLeft: "2rem" }}>
+                  <ThemeProvider theme={titleFont}><Typography component="span" variant="h6" >Infos du profil</Typography></ThemeProvider>
+                  </NavLink>
+                  </Grid>
+                  <Grid item>
+                  <LogOut />
+                  </Grid>
+                  </>
+                  : 
+                  <NavLink exact to="/Profil" style={{
+            color: "white", textDecoration: 'none'
+                    }}>   
+                  <Button color="inherit" ><Typography>Se connecter</Typography></Button>
+                  </NavLink>}
+                  
+              </Grid>
+            </Grid>
+          </Grid>
         </Toolbar>
+        </Container>
       </AppBar>
       </ThemeProvider>
+     
     </div>
   );
 }

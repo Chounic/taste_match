@@ -65,6 +65,7 @@ const FollowUnfollow = ({idToSet, type}) => {
                 </button>*/}
                 <Button
                 variant="contained" 
+                size="small"
                 onClick={handleFollow}
                 >
                 <Typography variant="h6" >{ !isEmpty(userData) && userData.following.includes(idToSet) ? 'UNFOLLOW' : 'FOLLOW' }</Typography>

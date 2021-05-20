@@ -116,7 +116,7 @@ const LeftNav = () => {
 
                     <Grid  className={classes.item}>
 
-                        <NavLink to='/Reviews' exact activeClassName={classes.button} style={{ textDecoration: 'none' }} >  
+                        <NavLink to='/SearchFriends' exact activeClassName={classes.button} style={{ textDecoration: 'none' }} >  
 
                             <Grid container alignItems="center" justify="center" style={{ color: "black" }}>
 
