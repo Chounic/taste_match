@@ -76,7 +76,7 @@ const ReviewsList = () => {
     return (
         <div /*style={{ backgroundColor: "red" }} */>
 
-          <h1 style={{ marginLeft: ".5rem"}}>Critiques d'albums</h1>
+          <h1 style={{ margin: "50px 0 60px 1rem"}}>Toutes les critiques d'albums</h1>
 
           <Grid container >
             { 

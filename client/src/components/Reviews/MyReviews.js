@@ -145,14 +145,14 @@ console.log(reviewsData);
                           color="secondary" 
                           onClick={() => handleUpdate(review)} 
                           >
-                            Update
+                            Modidier
                           </Button> 
                           <Button 
                           variant="contained" 
                           color="secondary" 
-                          onClick={() => { if (window.confirm('Are you sure you wish to delete this review?')) handleDelete(review._id) }} 
+                          onClick={() => { if (window.confirm('Êtes-vous sûr(e) de vouloir supprimer cette critique?')) handleDelete(review._id) }} 
                           >
-                            Delete
+                            Supprimer
                           </Button>
                         </Grid>
                     </Paper>

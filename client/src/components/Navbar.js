@@ -14,7 +14,7 @@ import logoTaste1 from '../images/logoTaste1.png';
 import { green } from '@material-ui/core/colors';
 import "@fontsource/courgette";
 import "@fontsource/luckiest-guy";
-import { Container, Grid } from '@material-ui/core';
+import { Container, Grid, Hidden } from '@material-ui/core';
 
 
 
@@ -35,7 +35,14 @@ const useStyles = makeStyles((theme) => ({
   title: {
     //flexGrow: 1, 
     marginRight: "1rem"
-  },
+  }, 
+  menu: {
+    textDecoration: 'none' , 
+    color: 'white', 
+    "&:hover": {
+      color: '#404845', 
+    }, 
+  }
 }));
 
 const theme = createMuiTheme({
@@ -73,8 +80,8 @@ export default function ButtonAppBar() {
       <AppBar position="static" className={classes.root}>
       <Container  maxWidth="xl" disableGutters>
         <Toolbar>
-          <Grid container spacing={3} justify="space-between">
-            <Grid item xs={12} sm={6} md={8} lg={9}>
+          <Grid container spacing={3} justify="space-between" alignItems="flex-end">
+            <Grid item xs={12} sm={3} lg={4}>
             
                   <NavLink exact to="/"><img src={logoTaste1} style={{ width: "4rem", marginRight: "1rem"}} alt="logo"/></NavLink>
               
@@ -87,7 +94,33 @@ export default function ButtonAppBar() {
                 
             </Grid>
 
-            <Grid item xs={12} sm={6} md={4} lg={3}>
+
+            { uid && (
+            <Hidden xsDown>
+            <Grid item sm={6} lg={5}  style={{ /*backgroundColor: "blue" */}}>
+
+              <NavLink to='/' className={classes.menu} exact >
+                <Button size="large" color="inherit" style={{ backgroundColor: 'transparent' }}>Accueil</Button>
+              </NavLink>
+
+              <NavLink to='/Following' className={classes.menu} exact >
+                <Button size="large" color="inherit" style={{ backgroundColor: 'transparent' }}>Following</Button>
+              </NavLink>
+
+              <NavLink to='/Followers' className={classes.menu} exact >
+                <Button size="large" color="inherit" style={{ backgroundColor: 'transparent' }}>Followers</Button>
+              </NavLink>
+
+              <NavLink to='/SearchFriends' className={classes.menu} exact >
+                <Button size="large" color="inherit" style={{ backgroundColor: 'transparent' }}>Suggestions</Button>
+              </NavLink>
+
+            </Grid>
+            </Hidden>
+            )
+            }
+
+            <Grid item xs={12} sm={3}>
               <Grid container alignItems="flex-end" spacing={3}>
                 
                 { uid ? <>

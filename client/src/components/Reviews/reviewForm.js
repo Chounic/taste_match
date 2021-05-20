@@ -152,7 +152,6 @@ keepMounted
 onClose={handleClose}
 aria-labelledby="alert-dialog-slide-title"
 aria-describedby="alert-dialog-slide-description" 
-fullScreen
 >
 
         <Paper elevation={3} >
@@ -160,7 +159,7 @@ fullScreen
 <Typography variant='h4' component="div" paragraph>
 
         <DialogTitle id="customized-dialog-title" disableTypography={true}>
-          Write a review
+          Rédigez une critique
 
           <CloseIcon onClick={handleClose} className={classes.customizedButton} />
 
@@ -176,7 +175,7 @@ fullScreen
                 <TextField 
 
 id="outlined-required" 
-label={<Typography variant="h4"  color="textPrimary" >Artist</Typography>} 
+label={<Typography variant="h4"  color="textPrimary" >Artiste</Typography>} 
 
 variant="outlined" 
 name="artist" 
@@ -211,7 +210,7 @@ InputLabelProps={{
 />
 
                 <Box component="fieldset" mb={3} borderColor="transparent" width="75%">
-                    <Typography component="legend" variant="h4">Rate the album</Typography>
+                    <Typography component="legend" variant="h4">Notez l'album</Typography>
                     <Rating 
                     name="rating"
                     defaultValue={2} 
@@ -225,7 +224,7 @@ InputLabelProps={{
                 <TextField 
 
 id="outlined-required 3" 
-label={<Typography variant="h4"  color="textPrimary" >Title review</Typography>} 
+label={<Typography variant="h4"  color="textPrimary" >Titre de la critique</Typography>} 
 
 variant="outlined" 
 name="title" 
@@ -242,10 +241,10 @@ InputLabelProps={{
 
                 <TextField
                 id="outlined-multiline-static"
-                label={<Typography variant="h4" color="textPrimary" >Review</Typography>}
+                label={<Typography variant="h4" color="textPrimary" >Critique</Typography>}
                 multiline
                 rows={10} 
-                placeholder="Don't be shy :) Tell us how you feel about it" 
+                placeholder="Décrivez en quelques lignes ce que vous en pensez" 
                 variant="outlined" 
                 name="text" 
                 onChange={handleChange} 
@@ -269,7 +268,7 @@ InputLabelProps={{
                       startIcon={<RateReviewIcon />}
                       style={{ margin: "3rem"}} 
                       >
-                      Send 
+                      Enregistrer 
                   </Button>
 
                 </Typography>

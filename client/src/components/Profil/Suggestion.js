@@ -49,9 +49,13 @@ const Suggestion = () => {
 
 
     return (
-        <Grid container justify="center">
+
+        <div>
+        <h1 style={{ margin: "50px 0 60px 1rem"}}>Suggestions d'amis</h1>
+
+        <Grid container justify="flex-start">
             
-            <h1>Friends suggestions</h1>
+
 
             {
                 !isEmpty(friendsSuggestion) && friendsSuggestion.map( user => {
@@ -75,6 +79,8 @@ const Suggestion = () => {
             }
 
         </Grid>
+
+        </div>
     );
 };
 

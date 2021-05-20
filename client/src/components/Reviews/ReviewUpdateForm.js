@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Button, Dialog, DialogTitle, makeStyles, Paper, Slide, TextField, Typography } from '@material-ui/core';
+import { Box, Button, Dialog, DialogTitle, Grid, makeStyles, Paper, Slide, TextField, Typography } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 import Rating from '@material-ui/lab/Rating';
 import RateReviewIcon from '@material-ui/icons/RateReview';
@@ -146,15 +146,15 @@ const ReviewUpdateForm = ({modal, review, closeModal}) => {
           onClose={handleClose}
           aria-labelledby="alert-dialog-slide-title"
           aria-describedby="alert-dialog-slide-description" 
-          fullScreen
+      
           >
-          
+
           <Paper elevation={3} >
           
           <Typography variant='h4' component='div' paragraph>
           
           <DialogTitle id="customized-dialog-title" disableTypography={true}>
-          Write a review
+          Modifier la critique
           
           <CloseIcon onClick={(handleClose)} className={classes.customizedButton} />
           
@@ -171,7 +171,7 @@ const ReviewUpdateForm = ({modal, review, closeModal}) => {
           <TextField 
           
           id="outlined-required" 
-          label={<Typography variant="h4"  color="textPrimary" >Artist</Typography>} 
+          label={<Typography variant="h4"  color="textPrimary" >Artiste</Typography>} 
           
           variant="outlined" 
           name="artist" 
@@ -207,7 +207,7 @@ const ReviewUpdateForm = ({modal, review, closeModal}) => {
 />
 
 <Box component="fieldset" mb={3} borderColor="transparent" width="75%">
-                    <Typography component="legend" variant="h4">Rate the album</Typography>
+                    <Typography component="legend" variant="h4">Notez l'album</Typography>
                     <Rating 
                     name="rating"
                     defaultValue={review.rating} 
@@ -221,7 +221,7 @@ const ReviewUpdateForm = ({modal, review, closeModal}) => {
 <TextField 
 
 id="outlined-required 3" 
-label={<Typography variant="h4"  color="textPrimary" >Title review</Typography>} 
+label={<Typography variant="h4"  color="textPrimary" >Titre de la critique</Typography>} 
 defaultValue={review.title} 
 variant="outlined" 
 name="title" 
@@ -239,7 +239,7 @@ InputLabelProps={{
 
 <TextField
                 id="outlined-multiline-static"
-                label={<Typography variant="h4" color="textPrimary" >Review</Typography>}
+                label={<Typography variant="h4" color="textPrimary" >Critique</Typography>}
                 multiline
                 rows={10} 
                 placeholder="Don't be shy :) Tell us how you feel about it" 
@@ -267,7 +267,7 @@ InputLabelProps={{
                       startIcon={<RateReviewIcon />}
                       style={{ margin: "3rem"}} 
                       >
-                      Send 
+                      Enregistrer 
                   </Button>
 
                 </Typography>

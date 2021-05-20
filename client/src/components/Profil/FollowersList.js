@@ -12,9 +12,12 @@ const FollowersList = () => {
 
         
         return (
-            <Grid container justify="center">
+            <div>
+            <h1 style={{ margin: "50px 0 60px 1rem" }}>Liste des personnes qui vous suivent</h1>
+
+            <Grid container justify="flex-start">
             
-            <h1>Followers</h1>
+ 
             {
                 !isEmpty(usersData) && usersData.map( user => {
                     if (!isEmpty(userData) && userData.followers.includes(user._id)) {
@@ -27,7 +30,7 @@ const FollowersList = () => {
                     })
             }
             </Grid>
-
+            </div>
 )
 
 

@@ -37,7 +37,8 @@ const useStyles = makeStyles((theme) => ({
         margin: '3rem'
     }, 
     input: {
-        fontSize: 15
+        fontSize: 15 ,
+        fontWeight: 'bold'
       }
   }));
 
@@ -121,7 +122,7 @@ const UpdateProfil = () => {
 
                             <TextField
                             id="outlined-multiline-static"
-                            label={<Typography variant="h4">Description</Typography>} 
+                            label={<Typography variant="h4" >Description</Typography>} 
                             multiline
                             rows={10} 
                             defaultValue={userData.description} 
@@ -132,7 +133,7 @@ const UpdateProfil = () => {
                                 className: classes.input
                             }} 
                             InputLabelProps={{
-                                shrink: true,
+                                shrink: true, 
                             }} 
                             onChange={handleChange} 
                             />
@@ -228,9 +229,13 @@ const UpdateProfil = () => {
                         </form>
                     
                     </ Paper>
+                    
+                    <Grid container xs={12} md={9} lg={8} justify="flex-start">
 
-                    <h1>Mes critiques</h1>
-                    <MyReviews />
+                        <h1>Mes critiques</h1>
+                        <MyReviews />
+
+                    </Grid>
                 </div>
 
             </div>

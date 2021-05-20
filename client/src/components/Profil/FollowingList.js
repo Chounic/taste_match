@@ -12,8 +12,8 @@ const FollowingList = () => {
 
     return (
         <div>
-        <h1 style={{ marginLeft: ".5rem"}}>Liste des personnes que vous suivez</h1>
-        <Grid container justify="center">
+        <h1 style={{ margin: "50px 0 60px 1rem"}}>Liste des personnes que vous suivez</h1>
+        <Grid container justify="flex-start">
 
             
             {

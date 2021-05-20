@@ -10,7 +10,7 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import { useSelector } from 'react-redux';
-import { Link } from '@material-ui/core';
+import { Hidden, Link } from '@material-ui/core';
 import './leftnav.css';
 
 
@@ -68,7 +68,7 @@ const LeftNav = () => {
     
     return (
 
-
+                <Hidden smUp>
                 <Grid container style={{ position: 'fixed', bottom: "0", margin: "0", width: "100%", zIndex: "2"}} >
 
                     <Grid className={classes.item}>
@@ -131,7 +131,7 @@ const LeftNav = () => {
 
 
                 </Grid>
-
+                </Hidden>
     );
 };
 
