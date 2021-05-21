@@ -2,9 +2,24 @@ html{
 
   font-size: 0.8em;
   border: green solid; 
+
+  
 }
 
+html::before {
 
+  content: "";
+  background-image: url("./images/main_background.jpg");
+  background-repeat: repeat;
+  position: fixed;
+  top: 0px ;
+  right: 0px ;
+  bottom: 0px ;
+  left: 0px ;
+  opacity: 0.15;
+  width: 100vw ;
+  height: 100vh ;
+}
 
 
 @media screen and (min-width:960px) {

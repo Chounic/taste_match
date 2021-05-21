@@ -85,7 +85,7 @@ const ReviewsList = () => {
                 return (
                 
                 <Grid item xs={12} lg={8}>
-                <Paper key={review._id} style={{ margin: '1.5rem', backgroundColor: "rgb(0 0 0 / 4%)" }}>
+                <Paper key={review._id} elevation={1} style={{ margin: '1.5rem', backgroundColor: "#b79f9f" }}>
                   <Grid container >
                     <Grid item xs={2} >
                       { !isEmpty(usersData) && usersData.filter( user => user._id === review.reviewerId).map(user => {

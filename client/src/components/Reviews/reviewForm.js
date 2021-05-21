@@ -139,7 +139,7 @@ const ReviewForm = () => {
     return (
 <>
 { uid &&  
-    <Button variant="outlined" className="addReviewButton" size="large" style={{margin: "4rem", width: "30%", fontSize: "1.2em", backgroundColor: "#2f3650", color:"white"}} onClick={handleClickOpen}>
+    <Button variant="outlined" className="addReviewButton" size="large" style={{margin: "4rem 4rem 1rem", width: "30%", fontSize: "1.2em", backgroundColor: "#2f3650", color:"white"}} onClick={handleClickOpen}>
     Ajouter une critique  
     </Button>
 }

@@ -13,12 +13,32 @@ import axios from 'axios';
 import Navbar from './components/Navbar';
 import LeftNav from './components/LeftNav';
 import Container from '@material-ui/core/Container';
-import { useDispatch } from 'react-redux';
-import { getUser } from './actions/user.actions';
+import { useDispatch } from 'react-redux' ;
+import { getUser } from './actions/user.actions' ;
+import Background from './images/main_background.jpg' ;
+import { makeStyles } from '@material-ui/core';
 
 
+const useStyles = makeStyles((theme) => ({
+
+  background: {
+    '&:after': {
+      content: '""',
+      backgroundImage: "url(" + Background + ")" ,
+      backgroundSize: 'cover', 
+      backgroundRepeat: 'repeat',
+      position: 'absolute',
+      top: '15rem' ,
+      right: '0px' ,
+      bottom: '0px' ,
+      left: '0px' ,
+      opacity: '0.2'
+    }
+  }
+}));
 
 function App() {
+
 
   const [uid, setUid] = useState(null);
   const dispatch = useDispatch();
@@ -43,23 +63,25 @@ function App() {
     }
   }, [uid]);
 
-
+  const classes = useStyles();
 
   return (
   <UidContext.Provider value={uid}>
     <Router>
-      <Navbar />
-      <Container maxWidth="lg" disableGutters>
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/login" exact component={Login} />
-        <Route path="/register" exact component={Register} />
-        <Route path="/profil" exact component={Profil} />
-        <Route path="/Following" exact component={Following} />
-        <Route path="/Followers" exact component={Followers} />
-        <Route path="/SearchFriends" exact component={SearchFriends} />
-        <Redirect to="/" />  
-      </Switch>
+      <div><Navbar /></div>
+      <Container maxWidth="lg" disableGutters >
+        <div  /*className={classes.background} */>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/login" exact component={Login} />
+            <Route path="/register" exact component={Register} />
+            <Route path="/profil" exact component={Profil} />
+            <Route path="/Following" exact component={Following} />
+            <Route path="/Followers" exact component={Followers} />
+            <Route path="/SearchFriends" exact component={SearchFriends} />
+            <Redirect to="/" />  
+          </Switch>
+        </div>
       </Container>
     </Router>
   </UidContext.Provider>

@@ -93,7 +93,7 @@ console.log(reviewsData);
             !isEmpty(reviewsData) && reviewsData.filter( review => review.reviewerId === userData._id).map( review => {
 
                 return (
-                    <Paper key={review._id} style={{ margin: '1rem', backgroundColor: "rgb(0 0 0 / 4%)" }}>
+                    <Paper key={review._id} style={{ margin: '1rem', backgroundColor: "#b79f9f" }}>
                         <Grid container >
                               
                           <Grid style={{ paddingLeft: ".5rem", borderBottom: "#d8d7d7 solid 1px"}} container justify="space-between" alignItems="center">

@@ -154,7 +154,7 @@ const ReviewUpdateForm = ({modal, review, closeModal}) => {
           <Typography variant='h4' component='div' paragraph>
           
           <DialogTitle id="customized-dialog-title" disableTypography={true}>
-          Modifier la critique
+          Modifier
           
           <CloseIcon onClick={(handleClose)} className={classes.customizedButton} />
           
