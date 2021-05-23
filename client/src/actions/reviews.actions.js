@@ -62,7 +62,7 @@ export const dislikeReview = (reviewId, dislikerId) => {
 
 export const undoDislikeReview = (reviewId, dislikerId) => {
     return (dispatch) => {
-        return axios.patch(`$/api/review/undoDislike-review/${reviewId}`, {id: dislikerId})
+        return axios.patch(`/api/review/undoDislike-review/${reviewId}`, {id: dislikerId})
         .then( res => {
             
             dispatch({ type: UNDODISLIKE_REVIEW, payload: {reviewId, dislikerId} })

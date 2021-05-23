@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { UidContext } from '../components/AppContext';
 import LeftNav from '../components/LeftNav';
-import Suggestion from '../components/Profil/Suggestion';
+import Suggestions from '../components/Profil/Suggestions';
 
 
 
@@ -14,7 +14,7 @@ const SearchFriends = () => {
     return (
         <div>
             { uid && <LeftNav /> }
-            <Suggestion />
+            <Suggestions />
 
             <div style={{height: "5rem"}}></div>
         </div>

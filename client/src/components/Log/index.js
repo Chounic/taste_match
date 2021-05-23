@@ -29,6 +29,7 @@ const Log = () => {
 
     const handleModals = (e) => {
         if (e.target.id === "signUp") {
+            console.log('sign');
             setsignInModal(false);
             setsignUpModal(true);
         } else if (e.target.id === "signIn") {

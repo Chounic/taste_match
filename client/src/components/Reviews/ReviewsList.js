@@ -94,33 +94,36 @@ const ReviewsList = () => {
 
                         <Grid container key={user._id} justify="center" alignContent="center" >
 
-                          <img src={user.picture} alt="reviewerPic"  style={{ width: '4rem', marginTop: "6rem", marginLeft: "1rem"}}/>
-                  
+                          <Grid item container justify="center" >
+
+                            <Grid><img src={user.picture} alt="reviewerPic"  style={{ width: '3rem', height: '4.5rem', marginTop: "6rem", marginLeft: "1rem"}}/></Grid>
+                            <Typography display="block" variant="subtitle2" >{user.pseudo}</Typography>
+
+                          </Grid>
+
+
+                          <Grid container justify="center" >
+                            <RateReviewIcon />
+                            <Typography >{reviewsData.filter( review => review.reviewerId === user._id).length }</Typography>
                             
-                            <p>{user.pseudo}</p>
+                          </Grid>
 
-                            <Grid container justify="center" >
-                              <RateReviewIcon />
-                              <Typography >{reviewsData.filter( review => review.reviewerId === user._id).length }</Typography>
-                              
-                            </Grid>
+                          <Grid container justify="center">
+                            <GroupIcon/>
+                            <Typography>{user.following.length }</Typography>
+                            <GroupIcon />
+                            <Typography paragraph>{user.followers.length }</Typography>
+                            
+                          </Grid>
+                        { uid && 
 
-                            <Grid container justify="center">
-                              <GroupIcon/>
-                              <Typography>{user.following.length }</Typography>
-                              <GroupIcon />
-                              <Typography paragraph>{user.followers.length }</Typography>
-                              
-                            </Grid>
-                          { uid && 
+                          <Grid container alignContent="center" alignItems="center" direction="column">
 
-                            <Grid container alignContent="center" alignItems="center" direction="column">
+                            <FollowUnfollow idToSet={user._id} type="review"/>
+                            
+                          </Grid>
 
-                              <FollowUnfollow idToSet={user._id} type="review"/>
-                              
-                            </Grid>
-
-                          }
+                        }
 
 
                           

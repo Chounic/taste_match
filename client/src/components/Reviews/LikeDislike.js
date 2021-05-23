@@ -19,7 +19,8 @@ const LikeDislike = ({review}) => {
         if (!review.likers.includes(userData._id) && !review.dislikers.includes(userData._id)) {
         
             dispatch(likeReview(review._id, userData._id));
-        } else {
+
+        } else if (review.likers.includes(userData._id) && !review.dislikers.includes(userData._id)) {
 
             dispatch(unlikeReview(review._id, userData._id));
         }
@@ -30,7 +31,8 @@ const LikeDislike = ({review}) => {
         if (!review.dislikers.includes(userData._id) && !review.likers.includes(userData._id)) {
         
             dispatch(dislikeReview(review._id, userData._id));
-        } else {
+
+        } else if (!review.likers.includes(userData._id) && review.dislikers.includes(userData._id)) {
 
             dispatch(undoDislikeReview(review._id, userData._id));
         }
@@ -41,7 +43,7 @@ const LikeDislike = ({review}) => {
         <>
         <Grid item>
 
-            <ThumbUpIcon fontSize="large" onClick={uid ? like : null} />
+            <ThumbUpIcon fontSize="large" onClick={uid && review.reviewerId !== userData._id ? () => like() : null} />
             <Typography>
             <span>{review.likers.length}</span>
             </Typography>
@@ -50,7 +52,7 @@ const LikeDislike = ({review}) => {
         <Grid item>
 
 
-            <ThumbDownIcon  fontSize="large" onClick={uid ? dislike : null} />
+            <ThumbDownIcon  fontSize="large" onClick={uid && review.reviewerId !== userData._id ? () => dislike() : null} />
             <Typography paragraph>
             <span>{review.dislikers.length}</span>
             </Typography>

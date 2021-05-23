@@ -55,7 +55,7 @@ const UserItem = ({data}) => {
 
 
     return (
-        <Paper key={data._id} style={{ margin: '1rem', width: '30rem', height: '18.5rem', backgroundColor: "rgb(210 211 212)" }}>
+        <Paper key={data._id} style={{ margin: '1rem', width: '30rem', height: '17rem', backgroundColor: "rgb(210 211 212)" }}>
             <Grid container justify="center">
 
                 <Grid container direction='row' alignItems='center' justify='space-evenly'>
@@ -65,7 +65,7 @@ const UserItem = ({data}) => {
                         </Grid>
                         <Grid container justify="space-around">
                             <Grid>
-                                <img src={data.picture} style={{ width: '5rem', height: '5rem' }}/>
+                                <img src={data.picture} style={{ width: '4.5rem', height: '5rem' }}/>
                             </Grid>
                             <Grid>
                                 {!isEmpty(reviewsData) && 

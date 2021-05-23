@@ -66,25 +66,32 @@ function App() {
   const classes = useStyles();
 
   return (
-  <UidContext.Provider value={uid}>
-    <Router>
-      <div><Navbar /></div>
-      <Container maxWidth="lg" disableGutters >
-        <div  /*className={classes.background} */>
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/login" exact component={Login} />
-            <Route path="/register" exact component={Register} />
-            <Route path="/profil" exact component={Profil} />
-            <Route path="/Following" exact component={Following} />
-            <Route path="/Followers" exact component={Followers} />
-            <Route path="/SearchFriends" exact component={SearchFriends} />
-            <Redirect to="/" />  
-          </Switch>
-        </div>
-      </Container>
-    </Router>
-  </UidContext.Provider>
+   
+    <div  className="container" >
+      <div className="background"></div>
+      <div className="main">
+        <UidContext.Provider value={uid}>
+          <Router>
+            <Navbar />
+            <Container maxWidth="lg" disableGutters >
+              
+                <Switch>
+                  <Route path="/" exact component={Home} />
+                  <Route path="/login" exact component={Login} />
+                  <Route path="/register" exact component={Register} />
+                  <Route path="/profil" exact component={Profil} />
+                  <Route path="/Following" exact component={Following} />
+                  <Route path="/Followers" exact component={Followers} />
+                  <Route path="/SearchFriends" exact component={SearchFriends} />
+                  <Redirect to="/" />  
+                </Switch>
+            
+            </Container>
+          </Router>
+        </UidContext.Provider>
+      </div>
+    </div>
+
   );
 }
 

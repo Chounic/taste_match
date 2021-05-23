@@ -139,9 +139,13 @@ const ReviewForm = () => {
     return (
 <>
 { uid &&  
-    <Button variant="outlined" className="addReviewButton" size="large" style={{margin: "4rem 4rem 1rem", width: "30%", fontSize: "1.2em", backgroundColor: "#2f3650", color:"white"}} onClick={handleClickOpen}>
+    <>
+    <Button variant="outlined" className="addReviewButton" size="large" style={{margin: "4rem 4rem 3rem", width: "30%", fontSize: "1.2em", backgroundColor: "#2f3650", color:"white"}} onClick={handleClickOpen}>
     Ajouter une critique  
     </Button>
+
+    <Typography align="center" display="block" variant="overline" style={{ fontSize: "1em", fontStyle: "italic", marginLeft: "10px"}}>( Renseignez les infos du profil et consultez les suggestions d'amis qui partagent les mêmes goûts musicaux que vous)</Typography>
+    </>
 }
 
 
@@ -223,19 +227,20 @@ InputLabelProps={{
 
                 <TextField 
 
-id="outlined-required 3" 
-label={<Typography variant="h4"  color="textPrimary" >Titre de la critique</Typography>} 
+                id="outlined-required 3" 
+                label={<Typography variant="h4"  color="textPrimary" >Titre de la critique</Typography>} 
 
-variant="outlined" 
-name="title" 
-InputProps={{
-  className: classes.input
-}} 
-InputLabelProps={{
-  shrink: true,
-}} 
+                variant="outlined" 
+                name="title" 
+                onChange={handleChange} 
+                InputProps={{
+                  className: classes.input
+                }} 
+                InputLabelProps={{
+                  shrink: true,
+                }} 
 
-/>
+                />
 
 
 

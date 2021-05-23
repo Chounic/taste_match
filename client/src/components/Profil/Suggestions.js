@@ -8,12 +8,12 @@ import { UidContext } from '../AppContext';
 import { getUser } from '../../actions/user.actions';
 import { Grid } from '@material-ui/core';
 
-const Suggestion = () => {
+const Suggestions = () => {
 
 
     const userData = useSelector( state => state.userReducer);
     const usersData = useSelector( state => state.usersReducer);
-    const [friendsSuggestion, setFriendsSuggestions] = useState([]);
+    const [friendsSuggestions, setFriendsSuggestions] = useState([]);
     const dispatch = useDispatch();
 
 
@@ -32,9 +32,10 @@ const Suggestion = () => {
 
                         let fav = Object.values(user.favArtists);
                         console.log(fav);
+                        /*console.log(userData.suggestions.includes(K));*/
                         const isIncluded = (item) => userData.suggestions.includes(item) || favArtistsArray.includes(item) ;
-                        console.log(user.favArtists);
-
+                        console.log(favArtistsArray);
+                        console.log(fav.some(isIncluded));
                         return fav.some(isIncluded) ;
 
                 } 
@@ -44,7 +45,7 @@ const Suggestion = () => {
             setFriendsSuggestions(suggestionsList);
         }
 
-    }, []);
+    }, [userData]);
 
 
 
@@ -58,7 +59,7 @@ const Suggestion = () => {
 
 
             {
-                !isEmpty(friendsSuggestion) && friendsSuggestion.map( user => {
+                !isEmpty(friendsSuggestions) && friendsSuggestions.map( user => {
                         console.log('ba alooors');
                         return (
 
@@ -68,7 +69,7 @@ const Suggestion = () => {
                 })
             }
             {
-                !isEmpty(usersData) && usersData.filter( user => user._id !== userData._id && !friendsSuggestion.includes(user)).map( user => {
+                !isEmpty(usersData) && usersData.filter( user => user._id !== userData._id && !userData.following.includes(user._id) && !friendsSuggestions.includes(user)).map( user => {
                         console.log('le reste koi');
                         return (
 
@@ -84,4 +85,4 @@ const Suggestion = () => {
     );
 };
 
-export default Suggestion;
+export default Suggestions;
