@@ -69,7 +69,7 @@ const Suggestions = () => {
                 })
             }
             {
-                !isEmpty(usersData) && usersData.filter( user => user._id !== userData._id && !userData.following.includes(user._id) && !friendsSuggestions.includes(user)).map( user => {
+                ( !isEmpty(usersData) && !isEmpty(userData) ) && usersData.filter( user => user._id !== userData._id && !userData.following.includes(user._id) && !friendsSuggestions.includes(user)).map( user => {
                         console.log('le reste koi');
                         return (
 

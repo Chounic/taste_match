@@ -42,7 +42,7 @@ module.exports.updateUser = async (req, res) => {
                     
                     const fav = Object.values(params.favArtists).join(', ');
                     
-                    await axios.get(`https://tastedive.com/api/similar?q=${fav}&type=music&k=407537-tastemat-I5L87G5S`).then( res => { 
+                    await axios.get(`https://tastedive.com/api/similar?q=${fav}&type=music&k=${process.env.TASTEDIVE_KEY}`).then( res => { 
                         
                         
                         let results = res.data.Similar.Results ;

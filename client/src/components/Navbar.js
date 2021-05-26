@@ -81,7 +81,7 @@ export default function ButtonAppBar() {
       <Container  maxWidth="xl" disableGutters>
         <Toolbar>
           <Grid container spacing={3} justify="space-between" alignItems="flex-end">
-            <Grid item xs={12} sm={3} lg={4}>
+            <Grid item xs={12} sm={4} lg={4}>
             
                   <NavLink exact to="/"><img src={logoTaste1} style={{ width: "4rem", marginRight: "1rem"}} alt="logo"/></NavLink>
               
@@ -97,7 +97,7 @@ export default function ButtonAppBar() {
 
             { uid && (
             <Hidden xsDown>
-            <Grid item sm={6} lg={5}  style={{ /*backgroundColor: "blue" */}}>
+            <Grid item sm={5} lg={5}  style={{ /*backgroundColor: "blue" */}}>
 
               <NavLink to='/' className={classes.menu} exact >
                 <Button size="large" color="inherit" style={{ backgroundColor: 'transparent' }}>Accueil</Button>
