@@ -1,3 +1,6 @@
+You can log in with "disco@disco.com" as an email address and "discodisco" as the associated password
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
