@@ -37,7 +37,8 @@ app.get('*', checkUser);
 app.get('/api/jwtid', requireAuth, (req, res) => {
     res.status(200).send(res.locals.user._id)
 });
-app.get('/', (req, res) => { res.send('Hello from Express!')});
+
+
 // routes
 app.use('/api/user', userRoutes);
 app.use('/api/review', reviewRoutes);

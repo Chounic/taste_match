@@ -1,14 +1,14 @@
 {
   "name": "taste-match",
   "version": "1.0.0",
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).", 
-  "main": "index.js", 
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
   "engines": {
     "node": "14.x",
     "npm": "7.6.0"
   },
   "scripts": {
-    "start": "nodemon server.js", 
+    "start": "nodemon server.js",
     "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "author": "",

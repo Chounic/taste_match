@@ -230,7 +230,7 @@ const UpdateProfil = () => {
                     
                     </ Paper>
                     
-                    <Grid container xs={12} md={9} lg={8} justify="flex-start">
+                    <Grid item xs={12} md={9} lg={8} justify="flex-start">
 
                         <h1>Mes critiques</h1>
                         <MyReviews />
