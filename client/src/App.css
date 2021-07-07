@@ -5,21 +5,6 @@ html{
   height: 100%;
 }
 
-/*html::after {
-
-  content: "";
-  background-image: url("./images/main_background.jpg");
-  background-repeat: repeat;
-  position: fixed;
-  top: 0px ;
-  right: 0px ;
-  bottom: 0px ;
-  left: 0px ;
-  opacity: 0.15;
-  width: 100vw ;
-  height: 100vh ;
-}*/
-
 
 .container {
 

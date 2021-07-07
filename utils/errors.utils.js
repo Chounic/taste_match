@@ -49,7 +49,7 @@ module.exports.updateErrors = (err) => {
     if (err.message.includes('max size')) {
         errors.maxSize = "Le fichier est trop volumineux" ;
     }
-//console.log(err.errors.pseudo);
+
     if (err.errors && err.errors.hasOwnProperty('pseudo')) {
         errors.pseudo = "Le pseudo doit avoir au moins 5 caractères" ;
     }

@@ -6,7 +6,7 @@ const { updateErrors } = require('../utils/errors.utils');
 
 
 module.exports.getAllUsers = async (req, res) => {
-    const users = await Usermodel.find({}, {password: 0});
+    const users = await Usermodel.find({}, { password: 0 });
     res.status(200).json(users);
 }
 
@@ -16,11 +16,11 @@ module.exports.userInfo = (req, res) => {
         return res.status(400).send('ID Unknown : ' + req.params.id);
     }
 
-    Usermodel.findById(req.params.id, {password: 0}, (err, data) => {
+    Usermodel.findById(req.params.id, { password: 0 }, (err, data) => {
         if (!err) {
             return res.send(data);
         } else {
-            console.log('ID unknown : '+ err)
+            console.log('ID unknown : ' + err)
         }
     }).select("-password");
 
@@ -34,44 +34,44 @@ module.exports.updateUser = async (req, res) => {
     try {
         let params = {};
 
-        for(let prop in req.body) if(req.body[prop] || req.body[prop] === '') params[prop] = req.body[prop];
+        for (let prop in req.body) if (req.body[prop] || req.body[prop] === '') params[prop] = req.body[prop];
 
 
-            if (params.favArtists) {
-                
-                    
-                    const fav = Object.values(params.favArtists).join(', ');
-                    
-                    await axios.get(`https://tastedive.com/api/similar?q=${fav}&type=music&k=${process.env.TASTEDIVE_KEY}`).then( res => { 
-                        
-                        
-                        let results = res.data.Similar.Results ;
-                        let suggestionsArray = results.map( artist => artist.Name);
-                        
-                        
-                        
-                        params.suggestions = suggestionsArray;
-                        
-                        
-                    });
+        if (params.favArtists) {
 
-            }
-            
-console.log(params);
+
+            const fav = Object.values(params.favArtists).join(', ');
+
+            await axios.get(`https://tastedive.com/api/similar?q=${fav}&type=music&k=${process.env.TASTEDIVE_KEY}`).then(res => {
+
+
+                let results = res.data.Similar.Results;
+                let suggestionsArray = results.map(artist => artist.Name);
+
+
+
+                params.suggestions = suggestionsArray;
+
+
+            });
+
+        }
+
+        console.log(params);
 
         await Usermodel.findOneAndUpdate(
-            {_id: req.params.id}, 
+            { _id: req.params.id },
             {
                 $set: params
-            }, 
-            {new: true, upsert: true, setDefaultsOnInsert: true, runValidators: true}, 
+            },
+            { new: true, upsert: true, setDefaultsOnInsert: true, runValidators: true },
             (err, data) => {
                 if (!err) {
 
                     return res.send(data);
-                } 
+                }
                 if (err) {
-                    console.log('pwobleme');
+
                     const errors = updateErrors(err);
                     return res.status(201).json({ errors });
                     //return res.status(400).send({ message: err });
@@ -93,7 +93,7 @@ module.exports.deleteUser = async (req, res) => {
     }
 
     try {
-        await Usermodel.remove({_id: req.params.id});
+        await Usermodel.remove({ _id: req.params.id });
         res.status(200).json({ message: "Successfully deleted. " });
     } catch (err) {
         return res.status(400).json({ message: err });
@@ -101,7 +101,7 @@ module.exports.deleteUser = async (req, res) => {
 }
 
 module.exports.followUser = async (req, res) => {
-    if (!ObjectID.isValid(req.params.id) || !ObjectID.isValid(req.body.idToFollow)  ) {
+    if (!ObjectID.isValid(req.params.id) || !ObjectID.isValid(req.body.idToFollow)) {
         return res.status(400).send('ID Unknown : ' + req.params.id);
     }
 
@@ -109,9 +109,9 @@ module.exports.followUser = async (req, res) => {
 
         // add to following
         await Usermodel.findByIdAndUpdate(
-            req.params.id, 
-            { $addToSet: { following: req.body.idToFollow }}, 
-            { new: true, upsert: true }, 
+            req.params.id,
+            { $addToSet: { following: req.body.idToFollow } },
+            { new: true, upsert: true },
             (err, data) => {
                 if (!err) {
                     res.status(201).json(data);
@@ -123,9 +123,9 @@ module.exports.followUser = async (req, res) => {
 
         // add to user's followers
         await Usermodel.findByIdAndUpdate(
-            req.body.idToFollow, 
-            { $addToSet: { followers: req.params.id }}, 
-            { new: true, upsert: true }, 
+            req.body.idToFollow,
+            { $addToSet: { followers: req.params.id } },
+            { new: true, upsert: true },
             (err, data) => {
                 /*if (!err) {
                     res.status(201).json(data);
@@ -136,13 +136,13 @@ module.exports.followUser = async (req, res) => {
             }
         )
     } catch (err) {
-        return res.status(400).json({ message: err});
+        return res.status(400).json({ message: err });
     }
-} 
+}
 
 module.exports.unfollowUser = async (req, res) => {
 
-    if (!ObjectID.isValid(req.params.id) || !ObjectID.isValid(req.body.idToUnfollow)  ) {
+    if (!ObjectID.isValid(req.params.id) || !ObjectID.isValid(req.body.idToUnfollow)) {
         return res.status(400).send('ID Unknown : ' + req.params.id);
     }
 
@@ -150,9 +150,9 @@ module.exports.unfollowUser = async (req, res) => {
 
         // remove from following
         await Usermodel.findByIdAndUpdate(
-            req.params.id, 
-            { $pull: { following: req.body.idToUnfollow }}, 
-            { new: true, upsert: true }, 
+            req.params.id,
+            { $pull: { following: req.body.idToUnfollow } },
+            { new: true, upsert: true },
             (err, data) => {
                 if (!err) {
                     res.status(201).json(data);
@@ -164,9 +164,9 @@ module.exports.unfollowUser = async (req, res) => {
 
         // remove from user's followers
         await Usermodel.findByIdAndUpdate(
-            req.body.idToUnfollow, 
-            { $pull: { followers: req.params.id }}, 
-            { new: true, upsert: true }, 
+            req.body.idToUnfollow,
+            { $pull: { followers: req.params.id } },
+            { new: true, upsert: true },
             (err, data) => {
                 /*if (!err) {
                     res.status(201).json(data);
@@ -177,7 +177,7 @@ module.exports.unfollowUser = async (req, res) => {
             }
         )
     } catch (err) {
-        return res.status(400).json({ message: err});
+        return res.status(400).json({ message: err });
     }
 
 }

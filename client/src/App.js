@@ -11,31 +11,13 @@ import Followers from './pages/Followers';
 import SearchFriends from './pages/SearchFriends';
 import axios from 'axios';
 import Navbar from './components/Navbar';
-import LeftNav from './components/LeftNav';
 import Container from '@material-ui/core/Container';
 import { useDispatch } from 'react-redux' ;
 import { getUser } from './actions/user.actions' ;
-import Background from './images/main_background.jpg' ;
-import { makeStyles } from '@material-ui/core';
 
 
-const useStyles = makeStyles((theme) => ({
 
-  background: {
-    '&:after': {
-      content: '""',
-      backgroundImage: "url(" + Background + ")" ,
-      backgroundSize: 'cover', 
-      backgroundRepeat: 'repeat',
-      position: 'absolute',
-      top: '15rem' ,
-      right: '0px' ,
-      bottom: '0px' ,
-      left: '0px' ,
-      opacity: '0.2'
-    }
-  }
-}));
+
 
 function App() {
 
@@ -63,7 +45,6 @@ function App() {
     }
   }, [uid]);
 
-  const classes = useStyles();
 
   return (
    
