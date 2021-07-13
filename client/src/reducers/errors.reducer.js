@@ -9,12 +9,10 @@ export default function errorsReducer (state = initialState, action) {
 
         case GET_UPLOAD_ERRORS: 
             return {
-                //reviewError: [], 
                 userErrors: action.payload
             };
         case GET_UPDATE_ERROR: 
             return {
-                //reviewError: [], 
                 userErrors: action.payload
             };
         

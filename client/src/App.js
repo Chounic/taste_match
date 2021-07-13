@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-d
 import { UidContext } from "./components/AppContext";
 import './App.css';
 import Home from './pages/Home';
-import Login from './pages/Login';
-import Register from './pages/Register';
 import Profil from './pages/Profil';
 import Following from './pages/Following';
 import Followers from './pages/Followers';
@@ -58,8 +56,6 @@ function App() {
               
                 <Switch>
                   <Route path="/" exact component={Home} />
-                  <Route path="/login" exact component={Login} />
-                  <Route path="/register" exact component={Register} />
                   <Route path="/profil" exact component={Profil} />
                   <Route path="/Following" exact component={Following} />
                   <Route path="/Followers" exact component={Followers} />

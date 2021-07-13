@@ -22,26 +22,24 @@ import { Container, Grid, Hidden } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    //flexGrow: 1, 
-    backgroundColor: "#63879e", 
+    backgroundColor: "#63879e",
 
-    height: "15rem", 
-    display: "flex", 
+    height: "15rem",
+    display: "flex",
     justifyContent: "center"
   },
   colorDefault: {
     backgroundColor: "#63879e",
-  }, 
+  },
   title: {
-    //flexGrow: 1, 
     marginRight: "1rem"
-  }, 
+  },
   menu: {
-    textDecoration: 'none' , 
-    color: 'white', 
+    textDecoration: 'none',
+    color: 'white',
     "&:hover": {
-      color: '#404845', 
-    }, 
+      color: '#404845',
+    },
   }
 }));
 
@@ -49,107 +47,107 @@ const theme = createMuiTheme({
   palette: {
     primary: {
       main: "#63879e",
-    }, 
+    },
   }
 });
 
 const titleFont = createMuiTheme({
   typography: {
-    fontFamily: 'Luckiest Guy', 
+    fontFamily: 'Luckiest Guy',
     backgroundColor: "red"
-  }, 
+  },
   palette: {
     primary: {
       main: "#2d363c",
-    }, 
+    },
   }
 });
 
 
 
 export default function ButtonAppBar() {
+
   const classes = useStyles();
-//#63879e
   const uid = useContext(UidContext);
-  const userdata = useSelector( state => state.userReducer);
+  const userdata = useSelector(state => state.userReducer);
 
   return (
     <div >
-      
+
       <ThemeProvider theme={theme}>
-      <AppBar position="static" className={classes.root}>
-      <Container  maxWidth="xl" disableGutters>
-        <Toolbar>
-          <Grid container spacing={3} justify="space-between" alignItems="flex-end">
-            <Grid item xs={12} sm={4} lg={4}>
-            
-                  <NavLink exact to="/"><img src={logoTaste1} style={{ width: "4rem", marginRight: "1rem"}} alt="logo"/></NavLink>
-              
-               
+        <AppBar position="static" className={classes.root}>
+          <Container maxWidth="xl" disableGutters>
+            <Toolbar>
+              <Grid container spacing={3} justify="space-between" alignItems="flex-end">
+                <Grid item xs={12} sm={4} lg={4}>
+
+                  <NavLink exact to="/"><img src={logoTaste1} style={{ width: "4rem", marginRight: "1rem" }} alt="logo" /></NavLink>
+
+
                   <ThemeProvider theme={titleFont}>
-                  <NavLink exact to="/" style={{ textDecoration: 'none' }}><Typography className={classes.title} variant="h4" component="span" noWrap color="primary" paragraph >
-                    Taste Match
-                  </Typography></NavLink>
+                    <NavLink exact to="/" style={{ textDecoration: 'none' }}><Typography className={classes.title} variant="h4" component="span" noWrap color="primary" paragraph >
+                      Taste Match
+                    </Typography></NavLink>
                   </ThemeProvider>
-                
-            </Grid>
+
+                </Grid>
 
 
-            { uid && (
-            <Hidden xsDown>
-            <Grid item sm={5} lg={5}  style={{ /*backgroundColor: "blue" */}}>
+                {uid && (
+                  <Hidden xsDown>
+                    <Grid item sm={5} lg={5} >
 
-              <NavLink to='/' className={classes.menu} exact >
-                <Button size="large" color="inherit" style={{ backgroundColor: 'transparent' }}>Accueil</Button>
-              </NavLink>
+                      <NavLink to='/' className={classes.menu} exact >
+                        <Button size="large" color="inherit" style={{ backgroundColor: 'transparent' }}>Accueil</Button>
+                      </NavLink>
 
-              <NavLink to='/Following' className={classes.menu} exact >
-                <Button size="large" color="inherit" style={{ backgroundColor: 'transparent' }}>Following</Button>
-              </NavLink>
+                      <NavLink to='/Following' className={classes.menu} exact >
+                        <Button size="large" color="inherit" style={{ backgroundColor: 'transparent' }}>Following</Button>
+                      </NavLink>
 
-              <NavLink to='/Followers' className={classes.menu} exact >
-                <Button size="large" color="inherit" style={{ backgroundColor: 'transparent' }}>Followers</Button>
-              </NavLink>
+                      <NavLink to='/Followers' className={classes.menu} exact >
+                        <Button size="large" color="inherit" style={{ backgroundColor: 'transparent' }}>Followers</Button>
+                      </NavLink>
 
-              <NavLink to='/SearchFriends' className={classes.menu} exact >
-                <Button size="large" color="inherit" style={{ backgroundColor: 'transparent' }}>Suggestions</Button>
-              </NavLink>
+                      <NavLink to='/SearchFriends' className={classes.menu} exact >
+                        <Button size="large" color="inherit" style={{ backgroundColor: 'transparent' }}>Suggestions</Button>
+                      </NavLink>
 
-            </Grid>
-            </Hidden>
-            )
-            }
+                    </Grid>
+                  </Hidden>
+                )
+                }
 
-            <Grid item xs={12} sm={3}>
-              <Grid container alignItems="flex-end" spacing={3}>
-                
-                { uid ? <>
-                  <Grid item>
-                  <ThemeProvider theme={theme}>
-                  <Typography component="span" display="block" variant="h6" color="textPrimary" >Hello {userdata.pseudo}</Typography></ThemeProvider>
-                  <NavLink exact to="/Profil" style={{  marginLeft: "2rem" }}>
-                  <ThemeProvider theme={titleFont}><Typography component="span" variant="h6" >Infos du profil</Typography></ThemeProvider>
-                  </NavLink>
+                <Grid item xs={12} sm={3}>
+                  <Grid container alignItems="flex-end" spacing={3}>
+
+                    {uid ? <>
+                      <Grid item>
+                        <ThemeProvider theme={theme}>
+                          <Typography component="span" display="block" variant="h6" color="textPrimary" >Hello {userdata.pseudo}</Typography></ThemeProvider>
+                        <NavLink exact to="/Profil" style={{ marginLeft: "2rem" }}>
+                          <ThemeProvider theme={titleFont}><Typography component="span" variant="h6" >Infos du profil</Typography></ThemeProvider>
+                        </NavLink>
+                      </Grid>
+                      <Grid item>
+                        <LogOut />
+                      </Grid>
+                    </>
+                      :
+                      <NavLink exact to="/Profil" style={{
+                        color: "white", textDecoration: 'none'
+                      }}>
+                        <Button color="inherit" ><Typography>Se connecter</Typography></Button>
+                      </NavLink>}
+
                   </Grid>
-                  <Grid item>
-                  <LogOut />
-                  </Grid>
-                  </>
-                  : 
-                  <NavLink exact to="/Profil" style={{
-            color: "white", textDecoration: 'none'
-                    }}>   
-                  <Button color="inherit" ><Typography>Se connecter</Typography></Button>
-                  </NavLink>}
-                  
+                </Grid>
               </Grid>
-            </Grid>
-          </Grid>
-        </Toolbar>
-        </Container>
-      </AppBar>
+            </Toolbar>
+          </Container>
+        </AppBar>
       </ThemeProvider>
-     
+
     </div>
   );
 }

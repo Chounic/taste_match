@@ -26,10 +26,10 @@ const UploadImg = () => {
 
             <label htmlFor="file">Changer d'image</label>
             <br></br>
-            <input type="file" id="file" name="file" accept=".jpg, .jpeg, .png" 
-            onChange={ e => setFile(e.target.files[0])} />
+            <input type="file" id="file" name="file" accept=".jpg, .jpeg, .png"
+                onChange={e => setFile(e.target.files[0])} />
             <br></br>
-            <input type="submit" value="Enregistrer" style={{ margin: "3rem"}}/>
+            <input type="submit" value="Enregistrer" style={{ margin: "3rem" }} />
 
         </form>
 

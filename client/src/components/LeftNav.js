@@ -4,10 +4,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import GroupIcon from '@material-ui/icons/Group';
 import PeopleOutlineIcon from '@material-ui/icons/PeopleOutline';
 import GroupAddIcon from '@material-ui/icons/GroupAdd';
-import RateReviewIcon from '@material-ui/icons/RateReview';
-import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import { useSelector } from 'react-redux';
 import { Hidden, Link } from '@material-ui/core';
@@ -23,7 +20,6 @@ const useStyles = makeStyles((theme) => ({
 
       width: "25%", 
       height: "3rem", 
-      //backgroundColor: "#98a7a6", 
       background: 'linear-gradient(45deg, #98a7a6 30%, #a0a0a0 90%)', 
       color: "#000000", 
       borderRadius: "3px", 
@@ -33,11 +29,7 @@ const useStyles = makeStyles((theme) => ({
     button: {
         display: "block", 
         height: "100%", 
-
         backgroundColor: "#FFFFFF", 
-        /*"&:active": {
-            backgroundColor: '#FFFFFF',
-          },*/
     }, 
     activeButton: {
 
@@ -53,17 +45,9 @@ const LeftNav = () => {
     const classes = useStyles();
 
     const userData = useSelector( state => state.userReducer);
-    //const [color, setColor] = useState('primary');
     const [currentButton, setCurrentButton] = useState();
 
 
-    const handleClick = (e) => {
-        console.log(e.target.innerText);
-        if (e.target.innerText !== currentButton) {
-            setCurrentButton(e.target.innerText);
-
-        }
-    };
 
     
     return (

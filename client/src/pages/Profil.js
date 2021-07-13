@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import Log from '../components/Log';
-import axios from "axios";
 import { UidContext } from '../components/AppContext';
 import UpdateProfil from '../components/Profil/UpdateProfil';
 

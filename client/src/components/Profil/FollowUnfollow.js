@@ -7,26 +7,25 @@ import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import { Button, Typography } from '@material-ui/core';
 
 
-const FollowUnfollow = ({idToSet, type}) => {
+const FollowUnfollow = ({ idToSet, type }) => {
 
 
-    const userData = useSelector( state => state.userReducer);
+    const userData = useSelector(state => state.userReducer);
     const dispatch = useDispatch();
 
 
     const handleFollow = () => {
 
-        console.log(idToSet);
 
         if (userData.following) {
 
 
-            if ( userData.following.includes(idToSet) ){
-                
+            if (userData.following.includes(idToSet)) {
+
                 dispatch(unfollowUser(idToSet, userData._id));
-                
+
             } else {
-                
+
                 dispatch(followUser(idToSet, userData._id));
             }
         }
@@ -47,32 +46,28 @@ const FollowUnfollow = ({idToSet, type}) => {
             <div>
 
                 <Typography align="center">Follow?
-                { !isEmpty(userData) && userData.following.includes(idToSet) ? 
-                <CheckBoxIcon onClick={handleFollow}/> 
-                : 
-                <CheckBoxOutlineBlankIcon onClick={handleFollow}/>
-                } </Typography>
+                    {!isEmpty(userData) && userData.following.includes(idToSet) ?
+                        <CheckBoxIcon onClick={handleFollow} />
+                        :
+                        <CheckBoxOutlineBlankIcon onClick={handleFollow} />
+                    } </Typography>
             </div>
         )
 
     } else {
-        
+
         return (
             <div>
-                {/*<button 
-                onClick={handleFollow}
-                >{ !isEmpty(userData) && userData.following.includes(idToSet) ? 'UNFOLLOW' : 'FOLLOW' }
-                </button>*/}
                 <Button
-                variant="contained" 
-                size="small"
-                onClick={handleFollow}
+                    variant="contained"
+                    size="small"
+                    onClick={handleFollow}
                 >
-                <Typography variant="h6" >{ !isEmpty(userData) && userData.following.includes(idToSet) ? 'UNFOLLOW' : 'FOLLOW' }</Typography>
+                    <Typography variant="h6" >{!isEmpty(userData) && userData.following.includes(idToSet) ? 'UNFOLLOW' : 'FOLLOW'}</Typography>
                 </Button>
             </div>
         );
-        
+
     }
 };
 
