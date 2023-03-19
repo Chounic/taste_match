@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const reviewController = require('../controllers/review.controller');
-const uploadController = require('../controllers/upload.controller');
-import multer from 'multer';
-const upload = multer();
+// const uploadController = require('../controllers/upload.controller');
+// import multer from 'multer';
+// const upload = multer();
 
 
 
@@ -16,7 +16,7 @@ router.patch("/dislike-review/:id", reviewController.dislikeReview);
 router.patch("/undoDislike-review/:id", reviewController.undoDislikeReview);
 
 // upload
-router.post('/uploadReview', upload.single('file'), uploadController.uploadReview);
+// router.post('/uploadReview', upload.single('file'), uploadController.uploadReview);
 
 
 
